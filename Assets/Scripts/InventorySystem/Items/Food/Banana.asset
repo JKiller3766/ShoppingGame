@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Banana
   Description: Bananas from a tree in my backyard, don't ask where it has been.
   ImageUI: {fileID: 6834737130408151645, guid: e9de8563f8a295245b43ec3556d39e0c, type: 3}
-  IsStackable: 0
+  IsStackable: 1
   Cost: 3
   LifeRestore: 2

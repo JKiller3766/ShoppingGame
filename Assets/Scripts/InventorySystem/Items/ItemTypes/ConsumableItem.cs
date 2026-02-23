@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Consumable : ItemBase
+public class ConsumableItem : ItemBase
 {
     public int LifeRestore;
 }
