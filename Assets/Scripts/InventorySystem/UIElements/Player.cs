@@ -4,15 +4,16 @@ using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public static class Player
 {
-    public static event Action OnPlayerChangeHealth;
-    public static event Action OnTransaction;
+    public static event Action<int> OnPlayerChangeHealth;
+    public static event Action<int> OnTransaction;
 
+    [SerializeField]
     public static int Health = 100;
     public static int Money = 100;
 
-    public void ModifyMoney(int Cost, bool Add)
+    public static void ModifyMoney(int Cost, bool Add)
     {
         if (Add)
         {
@@ -25,26 +26,28 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void AddMoney(int Cost) 
+    private static void AddMoney(int Cost) 
     {
         if (Shop.TakeMoney(Cost))
         {
+            int OldMoney = Money;
             Money += Cost;
-            OnTransaction?.Invoke();
+            OnTransaction?.Invoke(OldMoney);
         }
     }
 
-    private void TakeMoney(int Cost)
+    private static void TakeMoney(int Cost)
     {
         if (Money - Cost >= 0)
         {
             Shop.AddMoney(Cost);
+            int OldMoney = Money;
             Money -= Cost;
-            OnTransaction?.Invoke();
+            OnTransaction?.Invoke(OldMoney);
         }
     }
 
-    public void ModifyHealth(int Quantity, bool Healing)
+    public static void ModifyHealth(int Quantity, bool Healing)
     {
         if (Healing)
         {
@@ -57,16 +60,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Heal(int Quantity)
+    private static void Heal(int Quantity)
     {
+        int OldHealth = Health;
         Health += Quantity;
-        OnPlayerChangeHealth?.Invoke();
+        OnPlayerChangeHealth?.Invoke(OldHealth);
     }
 
-    private void Damage(int Quantity)
+    private static void Damage(int Quantity)
     {
+        int OldHealth = Health;
         Health -= Quantity;
-        OnPlayerChangeHealth?.Invoke();
+        OnPlayerChangeHealth?.Invoke(OldHealth);
         
         if (Health <= 0)
         {
