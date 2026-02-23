@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8583cd7f7ad5245a406954bbdf4f1b, type: 3}
+  m_Name: LowPotion
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPotion
+  Name: Low Potion
+  Description: Potion made from some herbs i found in the sorrounding woods.
+  ImageUI: {fileID: 5111564861191284023, guid: e9de8563f8a295245b43ec3556d39e0c, type: 3}
+  IsStackable: 1
+  Cost: 10
+  LifeRestore: 20

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e2a392fb00bbf4c95490dce924bf6a, type: 3}
+  m_Name: Wine
+  m_EditorClassIdentifier: Assembly-CSharp::ItemFood
+  Name: Wine
+  Description: Get drunky drunky with the best Wine of the world.
+  ImageUI: {fileID: -8431348835330033040, guid: e9de8563f8a295245b43ec3556d39e0c,
+    type: 3}
+  IsStackable: 0
+  Cost: 10
+  LifeRestore: -5
