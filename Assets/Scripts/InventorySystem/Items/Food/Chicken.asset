@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e2a392fb00bbf4c95490dce924bf6a, type: 3}
   m_Name: Chicken
   m_EditorClassIdentifier: Assembly-CSharp::ItemFood
-  Name: Fried Chicken
+  Name: ' Chicken'
   Description: It's one of my backyard's chicken. Arrived certain time comes to them
     the moment of go to sleep forever... Forced by me of course..
   ImageUI: {fileID: -6185764595886498194, guid: e9de8563f8a295245b43ec3556d39e0c,
