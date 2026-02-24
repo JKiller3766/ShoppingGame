@@ -4,10 +4,9 @@ public class ShoppingButtons : MonoBehaviour
 {
     public static void Buy()
     {
-        Debug.Log(ItemSlotUI.InventoryType());
-        /*else
+        if (ItemSlotUI.Selected != null)
         {
-            if (ItemSlotUI.Selected.InventoryType() == ShopInventory.TypeName)
+            if (ItemSlotUI.Selected.InventoryType() == "ShopInventory")
             {
                 Debug.Log("Se puede comprar");
             }
@@ -15,16 +14,14 @@ public class ShoppingButtons : MonoBehaviour
             {
                 Debug.Log("No se puede comprar");
             }
-        }*/
-
+        }
     }
 
     public static void Sell()
     {
-        Debug.Log(ItemSlotUI.InventoryType());
-        /*else
+        if (ItemSlotUI.Selected != null)
         {
-            if (ItemSlotUI.Selected.InventoryType() == PlayerInventory.TypeName)
+            if (ItemSlotUI.Selected.InventoryType() == "PlayerInventory")
             {
                 Debug.Log("Se puede vender");
             }
@@ -32,7 +29,7 @@ public class ShoppingButtons : MonoBehaviour
             {
                 Debug.Log("No se puede vender");
             }
-        }*/
+        }
     }
 
     public static void Use()

@@ -118,7 +118,7 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         else BackgroundImage.fillAmount = 0;
     }
 
-    public static string InventoryType()
+    public string InventoryType()
     {
         return Selected.inventoryUI.Inventory.InventoryType;
     }
