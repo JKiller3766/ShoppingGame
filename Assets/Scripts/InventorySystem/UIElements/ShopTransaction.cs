@@ -45,7 +45,7 @@ public class ShopTransaction : MonoBehaviour
 
         }
 
-        if (timer + 0.3f < Timer.TimePast && !(Text.color == Color.white))
+        if (timer + 0.3f < Timer.TimePast && !(Text.color == Color.white) && !changingMoney)
         {
             Text.color = Color.white;
         }

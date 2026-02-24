@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -20,6 +20,10 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Transform parent;
     private ItemBase item;
     private InventoryUI inventoryUI;
+
+    public static event Action OnSelect;
+    public static event Action OnDeselect;
+
     public void Initialize(ItemSlot slot, InventoryUI inventory)
     {
         Image.sprite = slot.Item.ImageUI;
@@ -46,9 +50,9 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         transform.SetParent(canvas.transform, true);
         
         transform.SetAsLastSibling();
-
+        Selected = this;
         BackgroundImage.fillAmount = 0;
-
+        OnSelect?.Invoke();
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -83,6 +87,7 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         BackgroundImage.fillAmount = 0;
         Selected = null;
+        OnDeselect?.Invoke();
     }
 
     private void ChangeSelected()
@@ -90,7 +95,6 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (Selected == null)
         {
             ChangeSelection();
-            Selected = this;
         }
 
         else
@@ -104,7 +108,6 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             else
             {
                 Selected.ChangeSelection();
-                Selected = this;
                 ChangeSelection();
             }
                 
@@ -113,8 +116,18 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     private void ChangeSelection()
     {
-        if (BackgroundImage.fillAmount == 0) BackgroundImage.fillAmount = 1;
-        else BackgroundImage.fillAmount = 0;
+        if (BackgroundImage.fillAmount == 0)
+        {
+            BackgroundImage.fillAmount = 1;
+            Selected = this;
+            OnSelect?.Invoke();
+        }
+        else
+        {
+            BackgroundImage.fillAmount = 0;
+            Selected = null;
+            OnDeselect?.Invoke();
+        }
     }
 
     public string InventoryType()

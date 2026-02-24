@@ -46,7 +46,7 @@ public class PlayerTransaction : MonoBehaviour
 
         }
 
-        if (timer + 0.3f < Timer.TimePast && !(TextMoney.color == Color.white))
+        if (timer + 0.3f < Timer.TimePast && !(TextMoney.color == Color.white) && !changingMoney)
         {
             TextMoney.color = Color.white;
         }
