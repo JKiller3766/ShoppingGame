@@ -64,8 +64,6 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         if (hitData)
         {
-            Debug.Log("Drop over object: " + hitData.collider.gameObject.name);
-
             var hit = hitData.collider.gameObject.GetComponent<InventoryUI>();
 
             if ((hit != null) && (hit.Inventory.InventoryType == "PlayerInventory") && (this.inventoryUI.Inventory.InventoryType == "ShopInventory"))
@@ -79,10 +77,8 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             }
         }
 
-        // Changing parent back to slot
         transform.SetParent(parent.transform);
 
-        // And centering item position
         transform.localPosition = Vector3.zero;
 
         BackgroundImage.fillAmount = 0;
@@ -129,5 +125,20 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public int GetItemPrice()
     {
         return item.Cost;
+    }
+
+    public ItemBase GetItem()
+    {
+        return item;
+    }
+
+    public bool IsFood()
+    {
+        return this.item is ItemFood;
+    }
+
+    public bool IsPotion()
+    {
+        return this.item is ItemPotion;
     }
 }
