@@ -130,4 +130,9 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         return item.Cost;
     }
+
+    public ItemBase GetItem() 
+    { 
+        return item; 
+    }
 }
