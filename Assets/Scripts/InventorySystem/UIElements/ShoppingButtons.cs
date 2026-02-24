@@ -39,7 +39,6 @@ public class ShoppingButtons : MonoBehaviour
 
     public static void Use()
     {
-        Debug.Log("labubu");
 
     }
 }
