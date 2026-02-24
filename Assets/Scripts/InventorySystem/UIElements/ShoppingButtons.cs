@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class ShoppingButtons : MonoBehaviour
@@ -9,6 +10,10 @@ public class ShoppingButtons : MonoBehaviour
             if (ItemSlotUI.Selected.InventoryType() == "ShopInventory")
             {
                 Debug.Log("Se puede comprar");
+                if (Player.Money >= ItemSlotUI.Selected.GetItemPrice())
+                {
+                    
+                }
             }
             else
             {

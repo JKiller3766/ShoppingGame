@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12bf1183da10bd44acad6f8166b21ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c03d6c4c42b5694bbb984341f324533, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   Slots:
@@ -17,9 +17,10 @@ MonoBehaviour:
     Amount: 1
   - Item: {fileID: 11400000, guid: fc3188fc90d1bb741a6f94f7d2aa49d9, type: 2}
     Amount: 1
+  - Item: {fileID: 11400000, guid: e77642c3587a668438f3a27bb415252e, type: 2}
+    Amount: 1
   - Item: {fileID: 11400000, guid: 2319319c9636ccf4a8be849ce9294bc6, type: 2}
     Amount: 2
   - Item: {fileID: 11400000, guid: 78e8a51c61177c94194781307177a79c, type: 2}
     Amount: 1
-  - Item: {fileID: 11400000, guid: e77642c3587a668438f3a27bb415252e, type: 2}
-    Amount: 1
+  InventoryType: PlayerInventory

@@ -122,4 +122,9 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         return Selected.inventoryUI.Inventory.InventoryType;
     }
+
+    public int GetItemPrice()
+    {
+        return item.Cost;
+    }
 }
