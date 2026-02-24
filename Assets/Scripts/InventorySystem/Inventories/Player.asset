@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c03d6c4c42b5694bbb984341f324533, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  Slots: []
+  Slots:
+  - Item: {fileID: 11400000, guid: b49d56ea1d8cc6846890c450bf85357e, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: fc3188fc90d1bb741a6f94f7d2aa49d9, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 2319319c9636ccf4a8be849ce9294bc6, type: 2}
+    Amount: 2
+  - Item: {fileID: 11400000, guid: 78e8a51c61177c94194781307177a79c, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: e77642c3587a668438f3a27bb415252e, type: 2}
+    Amount: 1

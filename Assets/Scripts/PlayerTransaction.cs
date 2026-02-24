@@ -15,6 +15,12 @@ public class PlayerTransaction : MonoBehaviour
 
     private float timer = 0f;
 
+    void Awake()
+    {
+        TextMoney.text = "" + (Shop.Money);
+        TextMoney.color = Color.white;
+    }
+
     private void FixedUpdate()
     {
         if (changingMoney)
@@ -23,15 +29,15 @@ public class PlayerTransaction : MonoBehaviour
             if (oldMoney > Player.Money)
             {
                 oldMoney--;
-                TextMoney.text = "" + (oldMoney);
                 TextMoney.color = Color.red;
+                TextMoney.text = "" + (oldMoney);
             }
 
             else if (oldMoney < Player.Money)
             {
                 oldMoney++;
-                TextMoney.text = "" + (oldMoney);
                 TextMoney.color = Color.green;
+                TextMoney.text = "" + (oldMoney);
 
             }
 

@@ -12,7 +12,13 @@ public class ShopTransaction : MonoBehaviour
 
     private float timer = 0f;
 
-    private void FixedUpdate()
+    void Awake()
+    {
+        Text.text = "" + (Shop.Money);
+        Text.color = Color.white;
+    }
+
+    void FixedUpdate()
     {
         if (changingMoney)
         {
@@ -20,15 +26,15 @@ public class ShopTransaction : MonoBehaviour
             if (oldMoney > Shop.Money)
             {
                 oldMoney--;
-                Text.text = "" + (oldMoney);
                 Text.color = Color.red;
+                Text.text = "" + (oldMoney);
             }
 
             else if (oldMoney < Shop.Money)
             {
                 oldMoney++;
-                Text.text = "" + (oldMoney);
                 Text.color = Color.green;
+                Text.text = "" + (oldMoney);
             }
 
             if (oldMoney == Shop.Money)
