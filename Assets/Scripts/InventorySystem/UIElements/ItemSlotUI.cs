@@ -130,14 +130,4 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         return item.Cost;
     }
-
-    public bool IsFood()
-    {
-        return this.item is ItemFood;
-    }
-
-    public bool IsPotion() 
-    {
-        return this.item is ItemPotion;
-    }
 }
