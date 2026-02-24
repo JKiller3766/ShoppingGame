@@ -39,7 +39,28 @@ public class ShoppingButtons : MonoBehaviour
 
     public static void Use()
     {
-        Debug.Log("labubu");
-
+        if (ItemSlotUI.Selected != null)
+        {
+            if (ItemSlotUI.Selected.InventoryType() == "PlayerInventory")
+            {
+                if (ItemSlotUI.Selected.IsPotion())
+                {
+                    Debug.Log("mmm potipoti");
+                }
+                else if (ItemSlotUI.Selected.IsFood())
+                {
+                    Debug.Log("mmm cum");
+                }
+                else
+                {
+                    Debug.Log("mmm no es cumestible");
+                }
+            }else
+            {
+                Debug.Log("nolobes");
+            }
+        }
     }
 }
+
+
