@@ -1259,6 +1259,7 @@ GameObject:
   - component: {fileID: 1013845784}
   - component: {fileID: 1013845786}
   - component: {fileID: 1013845785}
+  - component: {fileID: 1013845787}
   m_Layer: 5
   m_Name: TextUse
   m_TagString: Untagged
@@ -1385,6 +1386,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013845783}
   m_CullTransparentMesh: 0
+--- !u!114 &1013845787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013845783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a73f0ef8ef659e4c97dfb26b9764c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: shop_button_use
 --- !u!1 &1056100431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1410,7 @@ GameObject:
   - component: {fileID: 1056100432}
   - component: {fileID: 1056100434}
   - component: {fileID: 1056100433}
+  - component: {fileID: 1056100435}
   m_Layer: 5
   m_Name: TextBuy
   m_TagString: Untagged
@@ -1522,6 +1537,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056100431}
   m_CullTransparentMesh: 0
+--- !u!114 &1056100435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056100431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a73f0ef8ef659e4c97dfb26b9764c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: shop_button_buy
 --- !u!1 &1077905063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2122,7 @@ GameObject:
   - component: {fileID: 1426316715}
   - component: {fileID: 1426316717}
   - component: {fileID: 1426316716}
+  - component: {fileID: 1426316718}
   m_Layer: 5
   m_Name: TextSell
   m_TagString: Untagged
@@ -2220,6 +2249,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426316714}
   m_CullTransparentMesh: 0
+--- !u!114 &1426316718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426316714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a73f0ef8ef659e4c97dfb26b9764c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: shop_button_sell
 --- !u!1 &1546767111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,51 +2451,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 100
---- !u!1 &1627500758
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1627500760}
-  - component: {fileID: 1627500759}
-  m_Layer: 0
-  m_Name: LocalizationManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1627500759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627500758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d303ea7536c2db4ab01f6f8b22ba0c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizationManager
-  currentLanguage: 1
---- !u!4 &1627500760
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627500758}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.40252, y: -0.79893, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1649980052
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,4 +3053,3 @@ SceneRoots:
   - {fileID: 44048510}
   - {fileID: 1738404565}
   - {fileID: 1912972139}
-  - {fileID: 1627500760}
