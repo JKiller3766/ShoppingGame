@@ -8,14 +8,4 @@ public class ButtonScene : MonoBehaviour
     {
         SceneManager.LoadScene("Gameplay");
     }
-
-    public static void Prueba1Money(int asd)
-    {
-        Player.ModifyMoney(asd, true);
-    }
-
-    public static void Prueba2Money(int asd)
-    {
-        Player.ModifyMoney(asd, false);
-    }
 }

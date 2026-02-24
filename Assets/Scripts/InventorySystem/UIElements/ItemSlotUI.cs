@@ -11,13 +11,15 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     // implementing the Unity provided interfaces by events system
 
     public Image Image;
+    public Image BackgroundImage;
     public TextMeshProUGUI AmountText;
+
+    public static ItemSlotUI Selected;
 
     private Canvas canvas;
     private Transform parent;
     private ItemBase item;
-    private InventoryUI inventory;
-
+    private InventoryUI inventoryUI;
     public void Initialize(ItemSlot slot, InventoryUI inventory)
     {
         Image.sprite = slot.Item.ImageUI;
@@ -27,12 +29,12 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         AmountText.enabled = (slot.Amount > 1);
 
         item = slot.Item;
-        this.inventory = inventory;
+        this.inventoryUI = inventory;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Click detectado en elemento UI");
+        ChangeSelected();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -44,8 +46,9 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         transform.SetParent(canvas.transform, true);
         
         transform.SetAsLastSibling();
-    }
 
+        BackgroundImage.fillAmount = 1;
+    }
     public void OnDrag(PointerEventData eventData)
     {
         // Moving object around screen using mouse delta
@@ -67,7 +70,7 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             if ((consumer != null) && (item is ConsumableItem))
             {
                 //(item as ConsumableItem).Use(consumer);
-                inventory.UseItem(item);
+                inventoryUI.UseItem(item);
             }
         }
 
@@ -76,5 +79,45 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         // And centering item position
         transform.localPosition = Vector3.zero;
+
+        BackgroundImage.fillAmount = 0;
+        Selected = null;
+    }
+
+    private void ChangeSelected()
+    {
+        if (Selected == null)
+        {
+            ChangeSelection();
+            Selected = this;
+        }
+
+        else
+        {
+            if (Selected == this)
+            {
+                Selected = null;
+                ChangeSelection();
+            }
+
+            else
+            {
+                Selected.ChangeSelection();
+                Selected = this;
+                ChangeSelection();
+            }
+                
+        }
+    }
+
+    private void ChangeSelection()
+    {
+        if (BackgroundImage.fillAmount == 0) BackgroundImage.fillAmount = 1;
+        else BackgroundImage.fillAmount = 0;
+    }
+
+    public string InventoryType()
+    {
+        return inventoryUI.Inventory.GetInventoryType();
     }
 }

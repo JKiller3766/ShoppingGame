@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d38e0917bcfcd9469fc7fb9dee7aad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUI
-  Inventory: {fileID: 11400000, guid: 51073f2774c081d40aff05a8547cd617, type: 2}
+  Inventory: {fileID: 11400000, guid: e41069e9df6bedf468cc9f024e60aad4, type: 2}
   SlotPrefab: {fileID: 1814569384579080300, guid: 0ebfcb4e76de11242bccf10d6ea6b525,
     type: 3}
 --- !u!1 &73702493
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d38e0917bcfcd9469fc7fb9dee7aad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUI
-  Inventory: {fileID: 11400000, guid: e33d670a56bf1c14289f1da58565834e, type: 2}
+  Inventory: {fileID: 11400000, guid: 1eb32ca7bea4a914988b4e70f5f4e981, type: 2}
   SlotPrefab: {fileID: 1814569384579080300, guid: 0ebfcb4e76de11242bccf10d6ea6b525,
     type: 3}
 --- !u!114 &132200942
@@ -1167,9 +1167,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 827637572}
-        m_TargetAssemblyTypeName: ButtonScene, Assembly-CSharp
-        m_MethodName: Prueba1Money
-        m_Mode: 3
+        m_TargetAssemblyTypeName: ShoppingButtons, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1245,9 +1245,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 827637566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450e875edbb04324d976654685c99329, type: 3}
+  m_Script: {fileID: 11500000, guid: 20d63ac3495a29244ba133744c6647db, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonScene
+  m_EditorClassIdentifier: Assembly-CSharp::ShoppingButtons
 --- !u!1 &1013845783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,9 +1694,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1182170549}
-        m_TargetAssemblyTypeName: ButtonScene, Assembly-CSharp
-        m_MethodName: Prueba2Money
-        m_Mode: 3
+        m_TargetAssemblyTypeName: ShoppingButtons, Assembly-CSharp
+        m_MethodName: Sell
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1752,9 +1752,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1182170543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450e875edbb04324d976654685c99329, type: 3}
+  m_Script: {fileID: 11500000, guid: 20d63ac3495a29244ba133744c6647db, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonScene
+  m_EditorClassIdentifier: Assembly-CSharp::ShoppingButtons
 --- !u!1 &1210613855
 GameObject:
   m_ObjectHideFlags: 0

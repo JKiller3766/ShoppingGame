@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewInventory", menuName = "Inventory System/Inventory")]
 public class Inventory : ScriptableObject
 {
     [SerializeField]
     List<ItemSlot> Slots;
+
+    protected string inventoryType = null;
     public int Length => Slots.Count;
 
     public Action OnInventoryChange;
@@ -63,5 +64,10 @@ public class Inventory : ScriptableObject
     public ItemSlot GetSlot(int i)
     {
         return Slots[i];
+    }
+
+    public string GetInventoryType()
+    {
+        return inventoryType;
     }
 }
