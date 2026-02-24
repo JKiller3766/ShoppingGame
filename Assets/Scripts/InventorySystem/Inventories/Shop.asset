@@ -35,8 +35,6 @@ MonoBehaviour:
     Amount: 1
   - Item: {fileID: 11400000, guid: 02f3e0b1f5e74de4e8d0827e30da7980, type: 2}
     Amount: 1
-  - Item: {fileID: 11400000, guid: b49d56ea1d8cc6846890c450bf85357e, type: 2}
-    Amount: 1
   - Item: {fileID: 11400000, guid: fc3188fc90d1bb741a6f94f7d2aa49d9, type: 2}
     Amount: 1
   - Item: {fileID: 11400000, guid: fc3188fc90d1bb741a6f94f7d2aa49d9, type: 2}
