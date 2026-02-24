@@ -7,10 +7,16 @@ using UnityEngine.SceneManagement;
 public static class Player
 {
     public static event Action<int> OnPlayerChangeHealth;
+    public static event Action<int> OnPlayerChangeHunger;
     public static event Action<int> OnTransaction;
 
     [SerializeField]
-    public static int Health = 100;
+    public static readonly int MaxHealth = 100;
+    public static int Health = MaxHealth;
+
+    public static readonly int MaxHunger = 100;
+    public static int Hunger = MaxHealth;
+
     public static int Money = 100;
 
     public static void ModifyMoney(int Cost, bool Add)
@@ -78,5 +84,35 @@ public static class Player
             SceneManager.LoadScene("Ending");
         }
     }
+    public static void ModifyHunger(int Quantity, bool Eating)
+    {
+        if (Eating)
+        {
+            Eat(Quantity);
+        }
 
+        else
+        {
+            Starve(Quantity);
+        }
+    }
+
+    private static void Eat(int Quantity)
+    {
+        int OldHunger = Hunger;
+        Hunger += Quantity;
+        OnPlayerChangeHunger?.Invoke(OldHunger);
+    }
+
+    private static void Starve(int Quantity)
+    {
+        int OldHunger = Hunger;
+        Hunger -= Quantity;
+        OnPlayerChangeHunger?.Invoke(OldHunger);
+
+        if (Hunger <= 0)
+        {
+            SceneManager.LoadScene("Ending");
+        }
+    }
 }

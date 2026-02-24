@@ -5,13 +5,10 @@ using UnityEngine.UI;
 public class PlayerTransaction : MonoBehaviour
 {
     public Text TextMoney;
-    //public Text TextHealth;
 
     private int oldMoney;
-    private int oldHealth;
 
     private bool changingMoney;
-    private bool changingHealth;
 
     private float timer = 0f;
 
@@ -58,27 +55,17 @@ public class PlayerTransaction : MonoBehaviour
 
     private void OnEnable()
     {
-        Player.OnPlayerChangeHealth += ChangeHealth;
         Player.OnTransaction += ChangeMoney;
     }
 
     private void OnDisable()
     {
-        Player.OnPlayerChangeHealth -= ChangeHealth;
         Player.OnTransaction -= ChangeMoney;
     }
 
-    public void ChangeHealth(int OldHealth)
-    {
-        oldHealth = OldHealth;
-
-        changingHealth = true;
-    }
-
-    public void ChangeMoney(int OldMoney)
+    private void ChangeMoney(int OldMoney)
     {
         oldMoney = OldMoney;
-
         changingMoney = true;
     }
 }
