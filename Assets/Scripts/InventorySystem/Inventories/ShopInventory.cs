@@ -7,7 +7,7 @@ public class ShopInventory : Inventory
 {
     public static readonly string TypeName = "ShopInventory";
 
-    public void Initialize()
+    OnEnable()
     {
         inventoryType = TypeName;
     }

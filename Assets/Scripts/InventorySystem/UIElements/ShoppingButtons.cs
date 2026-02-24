@@ -4,7 +4,7 @@ public class ShoppingButtons : MonoBehaviour
 {
     public static void Buy()
     {
-        if (ItemSlotUI.Selected == null) Debug.Log(ItemSlotUI.Selected.InventoryType());
+        Debug.Log(ItemSlotUI.InventoryType());
         /*else
         {
             if (ItemSlotUI.Selected.InventoryType() == ShopInventory.TypeName)
@@ -21,7 +21,7 @@ public class ShoppingButtons : MonoBehaviour
 
     public static void Sell()
     {
-        if (ItemSlotUI.Selected != null) Debug.Log(ItemSlotUI.Selected.InventoryType());
+        Debug.Log(ItemSlotUI.InventoryType());
         /*else
         {
             if (ItemSlotUI.Selected.InventoryType() == PlayerInventory.TypeName)

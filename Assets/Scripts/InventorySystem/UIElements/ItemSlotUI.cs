@@ -47,7 +47,7 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         
         transform.SetAsLastSibling();
 
-        BackgroundImage.fillAmount = 1;
+        BackgroundImage.fillAmount = 0;
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -60,6 +60,8 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         // Find scene objects colliding with mouse point on end dragging
         RaycastHit2D hitData = Physics2D.GetRayIntersection(
             Camera.main.ScreenPointToRay(Input.mousePosition));
+
+        Debug.Log(hitData.point);
 
         if (hitData)
         {
@@ -116,8 +118,8 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         else BackgroundImage.fillAmount = 0;
     }
 
-    public string InventoryType()
+    public static string InventoryType()
     {
-        return inventoryUI.Inventory.GetInventoryType();
+        return Selected.inventoryUI.Inventory.InventoryType;
     }
 }
