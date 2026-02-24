@@ -48,6 +48,7 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         transform.SetAsLastSibling();
 
         BackgroundImage.fillAmount = 0;
+
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -61,18 +62,20 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         RaycastHit2D hitData = Physics2D.GetRayIntersection(
             Camera.main.ScreenPointToRay(Input.mousePosition));
 
-        Debug.Log(hitData.point);
-
         if (hitData)
         {
             Debug.Log("Drop over object: " + hitData.collider.gameObject.name);
 
-            var consumer = hitData.collider.gameObject.GetComponent<IConsume>();
+            var hit = hitData.collider.gameObject.GetComponent<InventoryUI>();
 
-            if ((consumer != null) && (item is ConsumableItem))
+            if ((hit != null) && (hit.Inventory.InventoryType == "PlayerInventory") && (this.inventoryUI.Inventory.InventoryType == "ShopInventory"))
             {
-                //(item as ConsumableItem).Use(consumer);
-                inventoryUI.UseItem(item);
+                ShoppingButtons.Buy();
+            }
+
+            if ((hit != null) && (hit.Inventory.InventoryType == "ShopInventory") && (this.inventoryUI.Inventory.InventoryType == "PlayerInventory"))
+            {
+                ShoppingButtons.Sell();
             }
         }
 
