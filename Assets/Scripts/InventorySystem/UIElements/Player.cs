@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public static class Player
 {
-    public static event Action<int> OnPlayerChangeHealth;
-    public static event Action<int> OnPlayerChangeHunger;
+    public static event Action OnPlayerChangeHealth;
+    public static event Action OnPlayerChangeHunger;
     public static event Action<int> OnTransaction;
 
     [SerializeField]
@@ -70,14 +70,18 @@ public static class Player
     {
         int OldHealth = Health;
         Health += Quantity;
-        OnPlayerChangeHealth?.Invoke(OldHealth);
+        if (Health > MaxHealth)
+        {
+            Health = MaxHealth;
+        }
+        OnPlayerChangeHealth?.Invoke();
     }
 
     private static void Damage(int Quantity)
     {
         int OldHealth = Health;
         Health -= Quantity;
-        OnPlayerChangeHealth?.Invoke(OldHealth);
+        OnPlayerChangeHealth?.Invoke();
         
         if (Health <= 0)
         {
@@ -101,14 +105,18 @@ public static class Player
     {
         int OldHunger = Hunger;
         Hunger += Quantity;
-        OnPlayerChangeHunger?.Invoke(OldHunger);
+        if (Hunger > MaxHunger)
+        {
+            Hunger = MaxHunger;
+        }
+        OnPlayerChangeHunger?.Invoke();
     }
 
     private static void Starve(int Quantity)
     {
         int OldHunger = Hunger;
         Hunger -= Quantity;
-        OnPlayerChangeHunger?.Invoke(OldHunger);
+        OnPlayerChangeHunger?.Invoke();
 
         if (Hunger <= 0)
         {

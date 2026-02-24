@@ -18,4 +18,4 @@ MonoBehaviour:
     type: 3}
   IsStackable: 1
   Cost: 22
-  LifeRestore: 50
+  Restore: 40

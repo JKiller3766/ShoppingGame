@@ -18,7 +18,7 @@ public class HealthBar : MonoBehaviour, IPointerClickHandler
         Player.OnPlayerChangeHealth -= ChangeHealth;
     }
 
-    private void ChangeHealth(int health)
+    private void ChangeHealth()
     {
         float fillAmount =  ((float) Player.Health) / ((float)Player.MaxHealth);
         healthBar.fillAmount = fillAmount;

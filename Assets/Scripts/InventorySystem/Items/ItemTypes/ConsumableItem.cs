@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class ConsumableItem : ItemBase
 {
-    public int LifeRestore;
+    public int Restore;
 }

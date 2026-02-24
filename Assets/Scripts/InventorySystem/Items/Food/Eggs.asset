@@ -19,4 +19,4 @@ MonoBehaviour:
     type: 3}
   IsStackable: 1
   Cost: 1
-  LifeRestore: 1
+  Restore: 5

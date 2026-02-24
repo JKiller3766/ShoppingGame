@@ -18,7 +18,7 @@ public class HungerBar : MonoBehaviour, IPointerClickHandler
         Player.OnPlayerChangeHunger -= ChangeHunger;
     }
 
-    private void ChangeHunger(int health)
+    private void ChangeHunger()
     {
         float fillAmount =  ((float) Player.Hunger) / ((float)Player.MaxHunger);
         hungerBar.fillAmount = fillAmount;

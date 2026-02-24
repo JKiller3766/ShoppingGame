@@ -54,15 +54,13 @@ public class ShoppingButtons : MonoBehaviour
             {
                 if (ItemSlotUI.Selected.IsPotion())
                 {
-
+                    Player.ModifyHealth((ItemSlotUI.Selected.GetItem() as ConsumableItem).Restore, true);
+                    playerInventory.RemoveItem(ItemSlotUI.Selected.GetItem());
                 }
                 else if (ItemSlotUI.Selected.IsFood())
                 {
-
-                }
-                else
-                {
-
+                    Player.ModifyHunger((ItemSlotUI.Selected.GetItem() as ConsumableItem).Restore, true);
+                    playerInventory.RemoveItem(ItemSlotUI.Selected.GetItem());
                 }
             }
             else

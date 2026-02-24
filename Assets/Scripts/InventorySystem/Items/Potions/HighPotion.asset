@@ -17,4 +17,4 @@ MonoBehaviour:
   ImageUI: {fileID: 3300551412438981794, guid: e9de8563f8a295245b43ec3556d39e0c, type: 3}
   IsStackable: 1
   Cost: 40
-  LifeRestore: 100
+  Restore: 100
