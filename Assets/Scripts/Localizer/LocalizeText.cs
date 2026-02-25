@@ -27,4 +27,9 @@ public class LocalizeText : MonoBehaviour
     {
         textValue.text = Localizer.GetText(TextKey);
     }
+
+    public static string GetText(string textKey)
+    {
+        return Localizer.GetText(textKey);
+    }
 }

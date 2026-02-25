@@ -17,12 +17,14 @@ public class ItemInfo : MonoBehaviour
     {
         ItemSlotUI.OnSelect += AddInfoChart;
         ItemSlotUI.OnDeselect += RemoveInfoChart;
+        Localizer.OnLanguageChange += AddInfoChart;
     }
 
     private void OnDisable()
     {
         ItemSlotUI.OnSelect -= AddInfoChart;
         ItemSlotUI.OnDeselect -= RemoveInfoChart;
+        Localizer.OnLanguageChange -= AddInfoChart;
     }
 
     private void AddInfoChart()
@@ -33,14 +35,20 @@ public class ItemInfo : MonoBehaviour
             
             if (itemSelected != null)
             {
-                Name.text = "Name: " + itemSelected.Name;
-                Description.text = "Description: " + itemSelected.Description;
-                Cost.text = "Cost: " + itemSelected.Cost;
+                LocalizeText [] localizerObject = GetComponentsInChildren<LocalizeText>();
+
+                Debug.Log(itemSelected.Name);
+                Debug.Log(LocalizeText.GetText(itemSelected.Name));
+
+                Name.text = (LocalizeText.GetText(localizerObject[0].TextKey) + " " + "LocalizeText.GetText(itemSelected.Name)");
+
+                Description.text = LocalizeText.GetText(localizerObject[1].TextKey) + " " + LocalizeText.GetText(itemSelected.Description);
+                Cost.text = LocalizeText.GetText(localizerObject[2].TextKey) + " " + itemSelected.Cost;
                 Sprite.sprite = itemSelected.ImageUI;
 				
                 if (itemSelected is ConsumableItem)
                 {
-                    Restores.text = "Restores: " + (itemSelected as ConsumableItem).Restore;
+                    Restores.text = LocalizeText.GetText(localizerObject[3].TextKey) + " " + (itemSelected as ConsumableItem).Restore;
                 }
                 else
                 {

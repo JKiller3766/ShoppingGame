@@ -2,13 +2,15 @@ Key;English;Catalan;Castellano
 TITLE_NAME;Boticary Diaries;El Diari de la Boticària;El Diario de la Boticaria
 TITLE_DESCRIPTION;Press ENTER to start the game or…;Prem ENTER per començar o...;Pulsa ENTER para empezar o...
 TITLE_BUTTON_TEXT;Start Game;Jugar;Jugar
-SHOP_TEXT; Shop; Tenda; Tienda
-SHOP_PLAYER_TEXT; Player; Jugador; Jugador
-SHOP_BUTTON_BUY;<Buy;<Comprar;<Comprar
-SHOP_BUTTON_SELL;Sell>;Vendre>;Vender>
+SHOP_TEXT;Shop;Tenda;Tienda
+SHOP_PLAYER_TEXT;Player;Jugador;Jugador
+SHOP_BUTTON_BUY;--> Buy -->;--> Comprar -->;--> Comprar -->
+SHOP_BUTTON_SELL;<-- Sell <--;<-- Vendre <--;<-- Vender <--
 SHOP_BUTTON_USE;Use;Utilitzar;Usar
-SHOP_NAME; Name:; Nom:; Nombre:
-SHOP_DESCRIPTION; Description:; Descripció:; Descripción:
+SHOP_NAME;Name:;Nom:;Nombre:
+SHOP_DESCRIPTION;Description:;Descripció:;Descripción:
+SHOP_COST;Cost:;Cost:;Coste:
+SHOP_RESTORE;Restores:;Restaura:;Restaura:
 ITEM_BANANA;Banana;Plàtan;Plátano
 ITEM_CHICKEN;Chicken;Pollastre;Pollo
 ITEM_EGGS;Eggs;Ous;Huevos
@@ -37,6 +39,6 @@ ITEM_KNIFE_DESCRIPTION;Perfect to defend yourself;Perfecte per defensar-te.;Perf
 ITEM_SHIELD_DESCRIPTION;Be protected from the enemies.;Protegeix-te dels enemics.;Protégete de los enemigos.
 ITEM_STAFF_DESCRIPTION;Magic staff to do magic stuff.;Bàcul màgic per fer coses de màgia.;Báculo mágico para hacer cosas de magia.
 ITEM_SWORD_DESCRIPTION;Every men's wish.;El desig de tot home.;El deseo de todo hombre.
-ENDING_TITLE; Game Over; Fi de Joc; Fin del Juego
-ENDING_DESCRIPTION; Press ENTER to restart or...; Prem ENTER per tornar a començar o...;Pulsa ENTER para volver a empezar o...
-ENDING_BUTTON_TEXT; Restart Game; Tornar a Començar; Volver a Empezar
+ENDING_TITLE;Game Over;Fi de Joc;Fin del Juego
+ENDING_DESCRIPTION;Press ENTER to restart or...;Prem ENTER per tornar a començar o...;Pulsa ENTER para volver a empezar o...
+ENDING_BUTTON_TEXT;Restart Game;Tornar a Començar;Volver a Empezar

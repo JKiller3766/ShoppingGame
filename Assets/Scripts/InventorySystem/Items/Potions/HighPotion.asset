@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8583cd7f7ad5245a406954bbdf4f1b, type: 3}
   m_Name: HighPotion
   m_EditorClassIdentifier: Assembly-CSharp::ItemPotion
-  Name: High Potion
-  Description: Potion made from the best quality materials.
+  Name: ITEM_HIGH_POTION
+  Description: ITEM_HIGH_POTION_DESCRIPTION
   ImageUI: {fileID: 3300551412438981794, guid: e9de8563f8a295245b43ec3556d39e0c, type: 3}
   IsStackable: 1
   Cost: 40

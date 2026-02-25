@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e2a392fb00bbf4c95490dce924bf6a, type: 3}
   m_Name: Eggs
   m_EditorClassIdentifier: Assembly-CSharp::ItemFood
-  Name: Eggs
-  Description: 'Eggs layed by my backyard''s chicken, it''s the most quality egg
-    you''ll ever find. '
+  Name: ITEM_EGGS
+  Description: ITEM_EGGS_DESCRIPTION
   ImageUI: {fileID: -3624606317574259240, guid: e9de8563f8a295245b43ec3556d39e0c,
     type: 3}
   IsStackable: 1

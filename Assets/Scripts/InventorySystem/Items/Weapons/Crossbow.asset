@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9d11b23f77a5545a61089990a97cff, type: 3}
   m_Name: Crossbow
   m_EditorClassIdentifier: Assembly-CSharp::ItemWeapon
-  Name: Crossbow
-  Description: Shot arrows like bullets.
+  Name: ITEM_CROSSBOW
+  Description: ITEM_CROSSBOW_DESCRIPTION
   ImageUI: {fileID: 1369617551474642710, guid: e9de8563f8a295245b43ec3556d39e0c, type: 3}
   IsStackable: 0
   Cost: 30

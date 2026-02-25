@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9d11b23f77a5545a61089990a97cff, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: Assembly-CSharp::ItemWeapon
-  Name: Sword
-  Description: Every men's wish.
+  Name: ITEM_SWORD
+  Description: ITEM_SWORD_DESCRIPTION
   ImageUI: {fileID: -8140498068569976594, guid: e9de8563f8a295245b43ec3556d39e0c,
     type: 3}
   IsStackable: 0

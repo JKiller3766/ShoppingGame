@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e2a392fb00bbf4c95490dce924bf6a, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: Assembly-CSharp::ItemFood
-  Name: Fish
-  Description: Recently caught fish from a near found river. Very tasty if well cooked.
+  Name: ITEM_FISH
+  Description: ITEM_FISH_DESCRIPTION
   ImageUI: {fileID: 566954228159664858, guid: e9de8563f8a295245b43ec3556d39e0c, type: 3}
   IsStackable: 1
   Cost: 5
