@@ -17,7 +17,8 @@ public static class Player
     public static readonly int MaxHunger = 100;
     public static int Hunger = MaxHealth;
 
-    public static int Money = 100;
+    public static readonly int DefaultMoney = 100;
+    public static int Money = DefaultMoney;
 
     public static void ModifyMoney(int Cost, bool Add)
     {
@@ -85,7 +86,7 @@ public static class Player
         
         if (Health <= 0)
         {
-            SceneManager.LoadScene("Ending");
+            Die();
         }
     }
     public static void ModifyHunger(int Quantity, bool Eating)
@@ -120,7 +121,21 @@ public static class Player
 
         if (Hunger <= 0)
         {
-            SceneManager.LoadScene("Ending");
+            Die();
         }
+    }
+
+    public static void Reset()
+    {
+        Money = DefaultMoney;
+        Health = MaxHealth;
+        Hunger = MaxHunger;
+    }
+
+    private static void Die()
+    {
+        Reset();
+        Shop.Reset();
+        SceneManager.LoadScene("Ending");
     }
 }

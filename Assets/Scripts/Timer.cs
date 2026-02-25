@@ -8,6 +8,10 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private float time;
 
+    public void Awake()
+    {
+        TimePast = 0;
+    }
     void Update()
     {
         TimePast += Time.deltaTime;

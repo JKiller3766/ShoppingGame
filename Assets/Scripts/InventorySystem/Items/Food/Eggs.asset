@@ -18,5 +18,5 @@ MonoBehaviour:
   ImageUI: {fileID: -3624606317574259240, guid: e9de8563f8a295245b43ec3556d39e0c,
     type: 3}
   IsStackable: 1
-  Cost: 1
-  Restore: 5
+  Cost: 2
+  Restore: 3

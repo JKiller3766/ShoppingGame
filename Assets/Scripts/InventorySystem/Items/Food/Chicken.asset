@@ -19,4 +19,4 @@ MonoBehaviour:
     type: 3}
   IsStackable: 0
   Cost: 15
-  Restore: 20
+  Restore: 70

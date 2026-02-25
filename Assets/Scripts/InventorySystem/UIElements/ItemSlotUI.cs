@@ -34,6 +34,8 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         item = slot.Item;
         this.inventoryUI = inventory;
+
+        Selected = null;
     }
 
     public void OnPointerClick(PointerEventData eventData)

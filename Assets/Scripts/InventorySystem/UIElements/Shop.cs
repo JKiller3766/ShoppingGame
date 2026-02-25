@@ -6,9 +6,9 @@ public static class Shop
 {
     public static event Action<int> OnTransaction;
 
+    public static readonly int DefaultMoney = 100;
     [SerializeField]
-    public static int Money = 100; 
-
+    public static int Money = DefaultMoney;
     public static bool TakeMoney(int Cost)
     {
         if (Money - Cost >= 0)
@@ -29,4 +29,8 @@ public static class Shop
         OnTransaction?.Invoke(OldMoney);
     }
 
+    public static void Reset()
+    {
+        Money = DefaultMoney;
+    }
 }
