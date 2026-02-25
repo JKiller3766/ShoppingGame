@@ -9,6 +9,7 @@ public class Inventory : ScriptableObject
     List<ItemSlot> Slots;
 
     public string InventoryType;
+	
     public int Length => Slots.Count;
 
     public Action OnInventoryChange;

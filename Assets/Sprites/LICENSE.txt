@@ -23,6 +23,8 @@
 
 	Free 10 RPG Ambient Tracks
 
+	EndingMusic.wav & GameplayMusic.wav & TitleMusic.wav
+
 	Absolutely Free For Commercial use
 
 	https://alkakrab.itch.io/free-10-rpg-game-ambient-tracks-music-pack-no-copyright
@@ -30,6 +32,8 @@
 ##############################################################################
 
 	FANTASY FOREST BACKGROUNDS
+
+	EndingBackground.png & GameplayBackground.png & TitleBackground.png
 
 	Pay What You Want. Use in your projects and games! You are free to use these backgrounds in personal
 	and commercial projects provided your content isn't racist or hateful. 
@@ -39,6 +43,8 @@
 ##############################################################################
 
 	Shikashis Fantasy icons pack
+
+	ItemSprites.png & SquareBackground.png
 
 	You can use and edit these icons for commercial games and projects. Many of these icons were based on
 	designs over at game-icons.net which are CC BY 4.0. Credit "Matt Firth(shikashipx)" and "game-icons.net".

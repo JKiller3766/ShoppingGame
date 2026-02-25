@@ -6,15 +6,16 @@ public static class Shop
 {
     public static event Action<int> OnTransaction;
 
-    public static readonly int DefaultMoney = 100;
-    [SerializeField]
+    public static readonly int DefaultMoney = 150;
     public static int Money = DefaultMoney;
-    public static bool TakeMoney(int Cost)
+
+
+    public static bool TakeMoney(int cost)
     {
-        if (Money - Cost >= 0)
+        if (Money - cost >= 0)
         {
             int OldMoney = Money;
-            Money -= Cost;
+            Money -= cost;
             OnTransaction?.Invoke(OldMoney);
             return true;
         }
@@ -22,10 +23,10 @@ public static class Shop
         else return false;
     }
 
-    public static void AddMoney(int Cost)
+    public static void AddMoney(int cost)
     {
         int OldMoney = Money;
-        Money += Cost;
+        Money += cost;
         OnTransaction?.Invoke(OldMoney);
     }
 

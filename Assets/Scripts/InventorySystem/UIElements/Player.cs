@@ -10,7 +10,6 @@ public static class Player
     public static event Action OnPlayerChangeHunger;
     public static event Action<int> OnTransaction;
 
-    [SerializeField]
     public static readonly int MaxHealth = 100;
     public static int Health = MaxHealth;
 
@@ -20,68 +19,68 @@ public static class Player
     public static readonly int DefaultMoney = 100;
     public static int Money = DefaultMoney;
 
-    public static void ModifyMoney(int Cost, bool Add)
+    public static void ModifyMoney(int cost, bool adding)
     {
-        if (Add)
+        if (adding)
         {
-            AddMoney(Cost);
+            AddMoney(cost);
         }
-
         else
         {
-            TakeMoney(Cost);
+            TakeMoney(cost);
         }
     }
 
-    private static void AddMoney(int Cost) 
+    private static void AddMoney(int cost) 
     {
-        if (Shop.TakeMoney(Cost))
+        if (Shop.TakeMoney(cost))
         {
             int OldMoney = Money;
-            Money += Cost;
+            Money += cost;
             OnTransaction?.Invoke(OldMoney);
         }
     }
 
-    private static void TakeMoney(int Cost)
+    private static void TakeMoney(int cost)
     {
-        if (Money - Cost >= 0)
+        if (Money - cost >= 0)
         {
-            Shop.AddMoney(Cost);
+            Shop.AddMoney(cost);
             int OldMoney = Money;
-            Money -= Cost;
+            Money -= cost;
             OnTransaction?.Invoke(OldMoney);
         }
     }
 
-    public static void ModifyHealth(int Quantity, bool Healing)
+    public static void ModifyHealth(int quantity, bool healing)
     {
-        if (Healing)
+        if (healing)
         {
-            Heal(Quantity);
+            Heal(quantity);
         }
-
         else
         {
-            Damage(Quantity);
+            Damage(quantity);
         }
     }
 
-    private static void Heal(int Quantity)
+    private static void Heal(int quantity)
     {
         int OldHealth = Health;
-        Health += Quantity;
+        Health += quantity;
+		
         if (Health > MaxHealth)
         {
             Health = MaxHealth;
         }
+		
         OnPlayerChangeHealth?.Invoke();
     }
 
-    private static void Damage(int Quantity)
+    private static void Damage(int quantity)
     {
         int OldHealth = Health;
-        Health -= Quantity;
+        Health -= quantity;
         OnPlayerChangeHealth?.Invoke();
         
         if (Health <= 0)
@@ -89,34 +88,36 @@ public static class Player
             Die();
         }
     }
-    public static void ModifyHunger(int Quantity, bool Eating)
+	
+    public static void ModifyHunger(int quantity, bool eating)
     {
-        if (Eating)
+        if (eating)
         {
-            Eat(Quantity);
+            Eat(quantity);
         }
-
         else
         {
-            Starve(Quantity);
+            Starve(quantity);
         }
     }
 
-    private static void Eat(int Quantity)
+    private static void Eat(int quantity)
     {
         int OldHunger = Hunger;
-        Hunger += Quantity;
-        if (Hunger > MaxHunger)
+        Hunger += quantity;
+		
+        if (Hunger > quantity)
         {
             Hunger = MaxHunger;
         }
+		
         OnPlayerChangeHunger?.Invoke();
     }
 
-    private static void Starve(int Quantity)
+    private static void Starve(int quantity)
     {
         int OldHunger = Hunger;
-        Hunger -= Quantity;
+        Hunger -= quantity;
         OnPlayerChangeHunger?.Invoke();
 
         if (Hunger <= 0)

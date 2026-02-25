@@ -1,36 +1,36 @@
 Key;English;Spanish;Catalan
-title_name: Boticary Diaries; Diario del Boticario; El Diari del Boticari
-title_description: Press ENTER to start the game or…; Pulsa ENTER para empezar o...; Prem ENTER per començar o...
-title_button_text: Start Game; Jugar; Jugar
-shop_button_buy: Buy; Comprar; Comprar
-shop_button_sell: Sell; Vender; Vendre
-shop_button_use: Use; Usar; Utilitzar
-item_banana: Banana; Platano; Platan
-item_chicken: Chicken; Pollo; Pollastre
-item_eggs: Eggs; Huevos; Ous
-item_fish: Fish; Pescado; Peix
-item_wine: Wine; Vino; Vi
-item_low_potion: Low Potion; Poción Baja; Poció Baixa
-item_mid_potion: Mid Potion; Poción Media; Poció Mitjana
-item_high_potion: High Potion; Poción Alta; Poció Alta
-item_axe: Axe; Hacha; Destral
-item_crossbow: Crossbow; Arco; Arc
-item_knife: Knife; Cuchillo; Ganivet
-item_shield: Shield; Escudo; Escut
-item_staff: Staff; Bastón; Bácul
-item_sword: Sword; Espada; Espasa
-item_banana_description: Bananas from a tree in my backyard, don't ask where it has been.; Plátanos de un árbol en mi jardín, no preguntes dónde han estado. ; Plàtans d'un arbre al meu jardí, no preguntis on han estat.
-item_chicken_description: It's one of my backyard's chicken. Arrived certain time comes to them the moment of go to sleep forever... Forced by me of course...; Es una de las gallinas de mi jardín. Llegado a cierto punto, les llega el momento de dormirse para siempre... Obligado por mí, claro.; És una de les gallines del meu jardí. Arribat a cert punt, els arriba el moment d'adormir-se per sempre... Obligat per mi, és clar.
-item_eggs_description: Eggs layed by my backyard's chicken, it's the most quality egg you'll ever find.; Huevos de la gallina de mi jardín; son los huevos de mejor calidad que encontrarás.; Ous de la gallina del meu jardí; són els ous de millor qualitat que trobaràs.
-item_fish_description: Recently caught fish from a near found river. Very tasty if well cooked.; Pescado recién capturado de un río cercano. Muy sabroso si se cocina bien.; Peix acabat de capturar d'un riu proper. Molt saborós si es cuina bé.
-item_wine_description: Get drunky drunky with the best Wine of the world.; Emborrachate con el mejor vino del mundo.; Emborratxa't amb el millor vi del món.
-item_low_potion_description: Potion made from some herbs i found in the sorrounding woods.; Poción hecha con hierbas que encontré en el bosque circundante.; Poció feta amb herbes que vaig trobar al bosc circumdant.
-item_mid_potion_description: Potion made from quality herbs i planted in my hothouse.; Poción hecha con hierbas de calidad que planté en mi invernadero.; Poció feta amb herbes de qualitat que vaig plantar al meu hivernacle.
-item_high_potion_description: Potion made from the best quality materials.; Poción hecha con materiales de la mejor calidad.; Poció feta amb materials de la més alta qualitat.
-item_axe_description: With such impressive Axe you can cut lives into pieces.; Con un hacha tan impresionante puedes cortar vidas en pedazos.; Amb una destral tan impressionant pots tallar vides a trossos.
-item_crossbow_description: Shot arrows like bullets.; Dispara flechas como balas.; Dispara fletxes com a bales.
-item_knife_description: Perfect to defend yourself; Perfecto para defenderte.; Perfecte per defensar-te.
-item_shield_description: Be protected from the enemies.; Protégete de los enemigos.; Protegeix-te dels enemics.
-item_staff_description: Magic staff to do magic stuff.; Bastón mágico para realizar magia.; Bastó màgic per fer màgia.
-item_sword_description: Every men's wish.; El deseo de todo hombre.; El desig de tot home.
+title_name; Boticary Diaries; Diario del Boticario; El Diari del Boticari
+title_description; Press ENTER to start the game or…; Pulsa ENTER para empezar o...; Prem ENTER per començar o...
+title_button_text; Start Game; Jugar; Jugar
+shop_button_buy; Buy; Comprar; Comprar
+shop_button_sell; Sell; Vender; Vendre
+shop_button_use; Use; Usar; Utilitzar
+item_banana; Banana; Platano; Platan
+item_chicken; Chicken; Pollo; Pollastre
+item_eggs; Eggs; Huevos; Ous
+item_fish; Fish; Pescado; Peix
+item_wine; Cheap Luzu's Wine; Vinito Barato de Luzu; Vi barat de Luzu
+item_low_potion; Low Potion; Poción Baja; Poció Baixa
+item_mid_potion; Mid Potion; Poción Media; Poció Mitjana
+item_high_potion; High Potion; Poción Alta; Poció Alta
+item_axe; Axe; Hacha; Destral
+item_crossbow; Crossbow; Arco; Arc
+item_knife; Knife; Cuchillo; Ganivet
+item_shield; Shield; Escudo; Escut
+item_staff; Staff; Bastón; Bácul
+item_sword; Sword; Espada; Espasa
+item_banana_description; Bananas from a tree in my backyard, don't ask where it has been.; Plátanos de un árbol en mi jardín, no preguntes dónde han estado. ; Plàtans d'un arbre al meu jardí, no preguntis on han estat.
+item_chicken_description; It's one of my backyard's chicken. Arrived certain time comes to them the moment of go to sleep forever... Forced by me of course...; Es una de las gallinas de mi jardín. Llegado a cierto punto, les llega el momento de dormirse para siempre... Obligado por mí, claro.; És una de les gallines del meu jardí. Arribat a cert punt, els arriba el moment d'adormir-se per sempre... Obligat per mi, és clar.
+item_eggs_description; Eggs layed by my backyard's chicken, it's the most quality egg you'll ever find.; Huevos de la gallina de mi jardín; son los huevos de mejor calidad que encontrarás.; Ous de la gallina del meu jardí; són els ous de millor qualitat que trobaràs.
+item_fish_description; Recently caught fish from a near found river. Very tasty if well cooked.; Pescado recién capturado de un río cercano. Muy sabroso si se cocina bien.; Peix acabat de capturar d'un riu proper. Molt saborós si es cuina bé.
+item_wine_description; Get drunky drunky with the best Wine of the world.; Emborrachate con el mejor vino del mundo.; Emborratxa't amb el millor vi del món.
+item_low_potion_description; Potion made from some herbs i found in the sorrounding woods.; Poción hecha con hierbas que encontré en el bosque circundante.; Poció feta amb herbes que vaig trobar al bosc circumdant.
+item_mid_potion_description; Potion made from quality herbs i planted in my hothouse.; Poción hecha con hierbas de calidad que planté en mi invernadero.; Poció feta amb herbes de qualitat que vaig plantar al meu hivernacle.
+item_high_potion_description; Potion made from the best quality materials.; Poción hecha con materiales de la mejor calidad.; Poció feta amb materials de la més alta qualitat.
+item_axe_description; With such impressive Axe you can cut lives into pieces.; Con un hacha tan impresionante puedes cortar vidas en pedazos.; Amb una destral tan impressionant pots tallar vides a trossos.
+item_crossbow_description; Shot arrows like bullets.; Dispara flechas como balas.; Dispara fletxes com a bales.
+item_knife_description; Perfect to defend yourself; Perfecto para defenderte.; Perfecte per defensar-te.
+item_shield_description; Be protected from the enemies.; Protégete de los enemigos.; Protegeix-te dels enemics.
+item_staff_description; Magic staff to do magic stuff.; Bastón mágico para realizar magia.; Bastó màgic per fer màgia.
+item_sword_description; Every men's wish.; El deseo de todo hombre.; El desig de tot home.
 

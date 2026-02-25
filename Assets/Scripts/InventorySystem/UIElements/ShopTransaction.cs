@@ -6,11 +6,10 @@ public class ShopTransaction : MonoBehaviour
 {
     public Text Text;
 
-    private int oldMoney;
-
+    public int OldMoney;
+	
     private bool changingMoney;
-
-    private float timer = 0f;
+    private float timer = 0.0f;
 
     void Awake()
     {
@@ -22,34 +21,35 @@ public class ShopTransaction : MonoBehaviour
     {
         if (changingMoney)
         {
-
-            if (oldMoney > Shop.Money)
+            if (OldMoney > Shop.Money)
             {
-                oldMoney--;
+                OldMoney--;
+				
                 Text.color = Color.red;
-                Text.text = "" + (oldMoney);
+                Text.text = "" + (OldMoney);
             }
-
-            else if (oldMoney < Shop.Money)
+            else if (OldMoney < Shop.Money)
             {
-                oldMoney++;
+                OldMoney++;
+				
                 Text.color = Color.green;
-                Text.text = "" + (oldMoney);
+                Text.text = "" + (OldMoney);
             }
 
-            if (oldMoney == Shop.Money)
+            if (OldMoney == Shop.Money)
             {
                 changingMoney = false;
+				
                 timer = Timer.TimePast;
             }
-
         }
 
-        if (timer + 0.3f < Timer.TimePast && !(Text.color == Color.white) && !changingMoney)
+        if ((timer + 0.3f < Timer.TimePast) && (!(Text.color == Color.white)) && (!changingMoney))
         {
             Text.color = Color.white;
         }
     }
+	
     private void OnEnable()
     {
         Shop.OnTransaction += ChangeMoneyText;
@@ -60,9 +60,9 @@ public class ShopTransaction : MonoBehaviour
         Shop.OnTransaction += ChangeMoneyText;
     }
 
-    public void ChangeMoneyText(int OldMoney)
+    public void ChangeMoneyText(int oldMoney)
     {
-        oldMoney = OldMoney;
+        OldMoney = oldMoney;
 
         changingMoney = true;
     }

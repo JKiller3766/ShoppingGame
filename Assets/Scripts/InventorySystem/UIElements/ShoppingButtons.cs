@@ -11,6 +11,7 @@ public class ShoppingButtons : MonoBehaviour
         playerInventory = GameObject.Find("InventoryPlayer").GetComponent<InventoryUI>().Inventory;
         shopInventory = GameObject.Find("InventoryShop").GetComponent<InventoryUI>().Inventory;
     }
+	
     public static void Buy()
     {
         if (ItemSlotUI.Selected != null)
@@ -18,9 +19,11 @@ public class ShoppingButtons : MonoBehaviour
             if (ItemSlotUI.Selected.InventoryType() == "ShopInventory")
             {
                 int itemCost = ItemSlotUI.Selected.GetItemPrice();
+				
                 if (Player.Money >= itemCost)
                 {
                     Player.ModifyMoney(itemCost, false);
+					
                     shopInventory.RemoveItem(ItemSlotUI.Selected.GetItem());
                     playerInventory.AddItem(ItemSlotUI.Selected.GetItem());
                 }
@@ -35,9 +38,11 @@ public class ShoppingButtons : MonoBehaviour
             if (ItemSlotUI.Selected.InventoryType() == "PlayerInventory")
             {
                 int itemCost = ItemSlotUI.Selected.GetItemPrice();
+				
                 if (Shop.Money >= itemCost)
                 {
                     Player.ModifyMoney(itemCost, true);
+					
                     shopInventory.AddItem(ItemSlotUI.Selected.GetItem());
                     playerInventory.RemoveItem(ItemSlotUI.Selected.GetItem());
                 }
@@ -55,17 +60,15 @@ public class ShoppingButtons : MonoBehaviour
                 if (ItemSlotUI.Selected.IsPotion())
                 {
                     Player.ModifyHealth((ItemSlotUI.Selected.GetItem() as ConsumableItem).Restore, true);
+					
                     playerInventory.RemoveItem(ItemSlotUI.Selected.GetItem());
                 }
                 else if (ItemSlotUI.Selected.IsFood())
                 {
                     Player.ModifyHunger((ItemSlotUI.Selected.GetItem() as ConsumableItem).Restore, true);
+					
                     playerInventory.RemoveItem(ItemSlotUI.Selected.GetItem());
                 }
-            }
-            else
-            {
-                Debug.Log("nolobes");
             }
         }
     }

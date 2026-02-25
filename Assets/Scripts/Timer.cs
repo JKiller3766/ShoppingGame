@@ -10,8 +10,9 @@ public class Timer : MonoBehaviour
 
     public void Awake()
     {
-        TimePast = 0;
+        TimePast = 0.0f;
     }
+	
     void Update()
     {
         TimePast += Time.deltaTime;

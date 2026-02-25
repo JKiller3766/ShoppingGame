@@ -7,9 +7,6 @@ using UnityEngine.UI;
 
 public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
-    // NOTE: Inventory UI slots support drag&drop,
-    // implementing the Unity provided interfaces by events system
-
     public Image Image;
     public Image BackgroundImage;
     public TextMeshProUGUI AmountText;
@@ -34,8 +31,6 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         item = slot.Item;
         this.inventoryUI = inventory;
-
-        Selected = null;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -52,19 +47,19 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         transform.SetParent(canvas.transform, true);
         
         transform.SetAsLastSibling();
+		
         Selected = this;
         BackgroundImage.fillAmount = 0;
         OnSelect?.Invoke();
     }
+	
     public void OnDrag(PointerEventData eventData)
     {
-        // Moving object around screen using mouse delta
         transform.localPosition += new Vector3(eventData.delta.x, eventData.delta.y, 0);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // Find scene objects colliding with mouse point on end dragging
         RaycastHit2D hitData = Physics2D.GetRayIntersection(
             Camera.main.ScreenPointToRay(Input.mousePosition));
 
@@ -87,8 +82,8 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         transform.localPosition = Vector3.zero;
 
+		Selected = null;
         BackgroundImage.fillAmount = 0;
-        Selected = null;
         OnDeselect?.Invoke();
     }
 
@@ -98,7 +93,6 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             ChangeSelection();
         }
-
         else
         {
             if (Selected == this)
@@ -106,13 +100,11 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 Selected = null;
                 ChangeSelection();
             }
-
             else
             {
                 Selected.ChangeSelection();
                 ChangeSelection();
             }
-                
         }
     }
 
@@ -120,14 +112,14 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (BackgroundImage.fillAmount == 0)
         {
-            BackgroundImage.fillAmount = 1;
             Selected = this;
+            BackgroundImage.fillAmount = 1;
             OnSelect?.Invoke();
         }
         else
         {
-            BackgroundImage.fillAmount = 0;
             Selected = null;
+            BackgroundImage.fillAmount = 0;
             OnDeselect?.Invoke();
         }
     }
@@ -137,23 +129,23 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         return Selected.inventoryUI.Inventory.InventoryType;
     }
 
-    public int GetItemPrice()
-    {
-        return item.Cost;
-    }
-
     public ItemBase GetItem()
     {
         return item;
     }
+	
+	public int GetItemPrice()
+    {
+        return item.Cost;
+    }
 
     public bool IsFood()
     {
-        return this.item is ItemFood;
+        return item is ItemFood;
     }
 
     public bool IsPotion()
     {
-        return this.item is ItemPotion;
+        return item is ItemPotion;
     }
 }

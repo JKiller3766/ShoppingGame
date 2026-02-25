@@ -5,16 +5,15 @@ using UnityEngine.UI;
 public class PlayerTransaction : MonoBehaviour
 {
     public Text TextMoney;
-
-    private int oldMoney;
-
+	
+    public int OldMoney;
+	
     private bool changingMoney;
-
-    private float timer = 0f;
+    private float timer = 0.0f;
 
     void Awake()
     {
-        TextMoney.text = "" + (Shop.Money);
+        TextMoney.text = "" + (Player.Money);
         TextMoney.color = Color.white;
     }
 
@@ -22,31 +21,30 @@ public class PlayerTransaction : MonoBehaviour
     {
         if (changingMoney)
         {
-
-            if (oldMoney > Player.Money)
+            if (OldMoney > Player.Money)
             {
-                oldMoney--;
+                OldMoney--;
+				
                 TextMoney.color = Color.red;
-                TextMoney.text = "" + (oldMoney);
+                TextMoney.text = "" + (OldMoney);
             }
-
-            else if (oldMoney < Player.Money)
+            else if (OldMoney < Player.Money)
             {
-                oldMoney++;
+                OldMoney++;
+				
                 TextMoney.color = Color.green;
-                TextMoney.text = "" + (oldMoney);
-
+                TextMoney.text = "" + (OldMoney);
             }
 
-            if (oldMoney == Player.Money)
+            if (OldMoney == Player.Money)
             {
                 changingMoney = false;
+				
                 timer = Timer.TimePast;
             }
-
         }
 
-        if (timer + 0.3f < Timer.TimePast && !(TextMoney.color == Color.white) && !changingMoney)
+        if ((timer + 0.3f < Timer.TimePast) && (!(TextMoney.color == Color.white)) && (!changingMoney))
         {
             TextMoney.color = Color.white;
         }
@@ -63,9 +61,9 @@ public class PlayerTransaction : MonoBehaviour
         Player.OnTransaction -= ChangeMoney;
     }
 
-    private void ChangeMoney(int OldMoney)
+    private void ChangeMoney(int oldMoney)
     {
-        oldMoney = OldMoney;
+        OldMoney = oldMoney;
         changingMoney = true;
     }
 }

@@ -25,7 +25,6 @@ public class InventoryUI : MonoBehaviour
 
     private void UpdateInventoryUI()
     {
-        // Regenerate full inventory on changes
         ClearInventoryUI();
         FillInventoryUI(Inventory);
     }
@@ -42,7 +41,6 @@ public class InventoryUI : MonoBehaviour
 
     private void FillInventoryUI(Inventory inventory)
     {
-        // Lazy initialization for objects list
         if (itemSlotList == null) itemSlotList = new List<GameObject>();
 
         if (itemSlotList.Count > 0) ClearInventoryUI();
@@ -55,7 +53,6 @@ public class InventoryUI : MonoBehaviour
 
     private GameObject AddSlot(ItemSlot itemSlot)
     {
-        // Add a new visual slot UI in inventory UI, using provided prefab
         var element = GameObject.Instantiate(SlotPrefab, Vector3.zero, Quaternion.identity, transform);
         
         element.Initialize(itemSlot, this);

@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class ItemInfo : MonoBehaviour
 {
-
     public Text Name;
     public Text Description;
     public Text Cost;
@@ -12,7 +11,6 @@ public class ItemInfo : MonoBehaviour
 
     [SerializeField]
     private Sprite defaultSprite;
-
     private ItemBase itemSelected;
 
     public void OnEnable()
@@ -39,18 +37,16 @@ public class ItemInfo : MonoBehaviour
                 Description.text = "Description: " + itemSelected.Description;
                 Cost.text = "Cost: " + itemSelected.Cost;
                 Sprite.sprite = itemSelected.ImageUI;
+				
                 if (itemSelected is ConsumableItem)
                 {
-                    Restores.text = "Restore: " + (itemSelected as ConsumableItem).Restore;
+                    Restores.text = "Restores: " + (itemSelected as ConsumableItem).Restore;
                 }
-
                 else
                 {
                     Restores.text = "";
                 }
             }
-
-            
         }
     }
 
