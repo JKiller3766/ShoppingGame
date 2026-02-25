@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class InventoryUI : MonoBehaviour
 
     void Start()
     {
+        Inventory.Slots.Clear();
+
+        foreach (ItemSlot item in Inventory.InitialSlots)
+        {
+            Inventory.Slots.Add(item);
+        }
+
         FillInventoryUI(Inventory);
     }
 
@@ -54,7 +62,7 @@ public class InventoryUI : MonoBehaviour
     private GameObject AddSlot(ItemSlot itemSlot)
     {
         var element = GameObject.Instantiate(SlotPrefab, Vector3.zero, Quaternion.identity, transform);
-        
+
         element.Initialize(itemSlot, this);
 
         return element.gameObject;

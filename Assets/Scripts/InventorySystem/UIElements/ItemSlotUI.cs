@@ -48,6 +48,8 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         
         transform.SetAsLastSibling();
 		
+        if (Selected != null) Selected.ChangeSelection();
+
         Selected = this;
         BackgroundImage.fillAmount = 0;
         OnSelect?.Invoke();
@@ -82,8 +84,8 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         transform.localPosition = Vector3.zero;
 
-		Selected = null;
-        BackgroundImage.fillAmount = 0;
+        Selected.BackgroundImage.fillAmount = 0;
+        Selected = null;
         OnDeselect?.Invoke();
     }
 

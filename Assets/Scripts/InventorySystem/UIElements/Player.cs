@@ -7,7 +7,11 @@ using UnityEngine.SceneManagement;
 public static class Player
 {
     public static event Action OnPlayerChangeHealth;
+    public static event Action OnPlayerDamage;
+
     public static event Action OnPlayerChangeHunger;
+    public static event Action OnPlayerStarve;
+
     public static event Action<int> OnTransaction;
 
     public static readonly int MaxHealth = 100;
@@ -37,6 +41,7 @@ public static class Player
         {
             int OldMoney = Money;
             Money += cost;
+
             OnTransaction?.Invoke(OldMoney);
         }
     }
@@ -48,6 +53,7 @@ public static class Player
             Shop.AddMoney(cost);
             int OldMoney = Money;
             Money -= cost;
+
             OnTransaction?.Invoke(OldMoney);
         }
     }
@@ -81,8 +87,11 @@ public static class Player
     {
         int OldHealth = Health;
         Health -= quantity;
+
         OnPlayerChangeHealth?.Invoke();
-        
+        OnPlayerDamage?.Invoke();
+
+
         if (Health <= 0)
         {
             Die();
@@ -106,7 +115,7 @@ public static class Player
         int OldHunger = Hunger;
         Hunger += quantity;
 		
-        if (Hunger > quantity)
+        if (Hunger > MaxHunger)
         {
             Hunger = MaxHunger;
         }
@@ -118,7 +127,9 @@ public static class Player
     {
         int OldHunger = Hunger;
         Hunger -= quantity;
+
         OnPlayerChangeHunger?.Invoke();
+        OnPlayerStarve?.Invoke();
 
         if (Hunger <= 0)
         {

@@ -3734,6 +3734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1912972139}
   - component: {fileID: 1912972137}
+  - component: {fileID: 1912972140}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -3853,6 +3854,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1912972140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912972136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80cd08909fbde340ba9dfd4f2458fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SFXManager
+  SFXSource: {fileID: 1912972137}
+  SelectionSound: {fileID: 8300000, guid: f6355b0d892800d4e9ba1dc8727e4781, type: 3}
+  TransactionSound: {fileID: 8300000, guid: e708417713aed0c40a388aca8178e2e9, type: 3}
+  ConsumableSound: {fileID: 8300000, guid: 7fb44857372d9cd4199fc3ec69f73cb3, type: 3}
+  DamageSound: {fileID: 8300000, guid: c21d73ce0d4167644bc3c671a90a93b9, type: 3}
+  StarvingSound: {fileID: 8300000, guid: 4343f5205d3ee5b4aafad00cc6ed8a38, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ public class ShoppingButtons : MonoBehaviour
 {
     private static Inventory playerInventory;
     private static Inventory shopInventory;
+
+    public static event Action OnConsumableUse;
 
     private void Awake()
     {
@@ -62,12 +65,16 @@ public class ShoppingButtons : MonoBehaviour
                     Player.ModifyHealth((ItemSlotUI.Selected.GetItem() as ConsumableItem).Restore, true);
 					
                     playerInventory.RemoveItem(ItemSlotUI.Selected.GetItem());
+
+                    OnConsumableUse?.Invoke();
                 }
                 else if (ItemSlotUI.Selected.IsFood())
                 {
                     Player.ModifyHunger((ItemSlotUI.Selected.GetItem() as ConsumableItem).Restore, true);
 					
                     playerInventory.RemoveItem(ItemSlotUI.Selected.GetItem());
+
+                    OnConsumableUse?.Invoke();
                 }
             }
         }

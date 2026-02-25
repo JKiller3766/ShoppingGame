@@ -6,7 +6,9 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     [SerializeField]
-    List<ItemSlot> Slots;
+    public List<ItemSlot> InitialSlots;
+
+    public List<ItemSlot> Slots;
 
     public string InventoryType;
 	
