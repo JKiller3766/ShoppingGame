@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public static class Player
 {
-    public static event Action OnPlayerChangeHealth;
+    public static event Action<int> OnPlayerChangeHealth;
     public static event Action OnPlayerDamage;
 
-    public static event Action OnPlayerChangeHunger;
+    public static event Action<int> OnPlayerChangeHunger;
     public static event Action OnPlayerStarve;
 
     public static event Action<int> OnTransaction;
@@ -39,10 +39,10 @@ public static class Player
     {
         if (Shop.TakeMoney(cost))
         {
-            int OldMoney = Money;
+            int oldMoney = Money;
             Money += cost;
 
-            OnTransaction?.Invoke(OldMoney);
+            OnTransaction?.Invoke(oldMoney);
         }
     }
 
@@ -51,10 +51,11 @@ public static class Player
         if (Money - cost >= 0)
         {
             Shop.AddMoney(cost);
-            int OldMoney = Money;
+
+            int oldMoney = Money;
             Money -= cost;
 
-            OnTransaction?.Invoke(OldMoney);
+            OnTransaction?.Invoke(oldMoney);
         }
     }
 
@@ -72,7 +73,7 @@ public static class Player
 
     private static void Heal(int quantity)
     {
-        int OldHealth = Health;
+        int oldHealth = Health;
         Health += quantity;
 		
         if (Health > MaxHealth)
@@ -80,22 +81,16 @@ public static class Player
             Health = MaxHealth;
         }
 		
-        OnPlayerChangeHealth?.Invoke();
+        OnPlayerChangeHealth?.Invoke(oldHealth);
     }
 
     private static void Damage(int quantity)
     {
-        int OldHealth = Health;
+        int oldHealth = Health;
         Health -= quantity;
 
-        OnPlayerChangeHealth?.Invoke();
+        OnPlayerChangeHealth?.Invoke(oldHealth);
         OnPlayerDamage?.Invoke();
-
-
-        if (Health <= 0)
-        {
-            Die();
-        }
     }
 	
     public static void ModifyHunger(int quantity, bool eating)
@@ -112,29 +107,19 @@ public static class Player
 
     private static void Eat(int quantity)
     {
-        int OldHunger = Hunger;
+        int oldHunger = Hunger;
         Hunger += quantity;
 		
-        if (Hunger > MaxHunger)
-        {
-            Hunger = MaxHunger;
-        }
-		
-        OnPlayerChangeHunger?.Invoke();
+        OnPlayerChangeHunger?.Invoke(oldHunger);
     }
 
     private static void Starve(int quantity)
     {
-        int OldHunger = Hunger;
+        int oldHunger = Hunger;
         Hunger -= quantity;
 
-        OnPlayerChangeHunger?.Invoke();
+        OnPlayerChangeHunger?.Invoke(oldHunger);
         OnPlayerStarve?.Invoke();
-
-        if (Hunger <= 0)
-        {
-            Die();
-        }
     }
 
     public static void Reset()
@@ -142,12 +127,5 @@ public static class Player
         Money = DefaultMoney;
         Health = MaxHealth;
         Hunger = MaxHunger;
-    }
-
-    private static void Die()
-    {
-        Reset();
-        Shop.Reset();
-        SceneManager.LoadScene("Ending");
     }
 }

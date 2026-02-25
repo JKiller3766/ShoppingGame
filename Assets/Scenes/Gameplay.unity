@@ -3279,6 +3279,7 @@ GameObject:
   - component: {fileID: 1738404565}
   - component: {fileID: 1738404564}
   - component: {fileID: 1738404566}
+  - component: {fileID: 1738404567}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3326,6 +3327,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   time: 0
+--- !u!114 &1738404567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738404562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd9199e61337af4e98d253debbd354f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathTrigger
 --- !u!1 &1778100640
 GameObject:
   m_ObjectHideFlags: 0

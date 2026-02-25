@@ -8,6 +8,37 @@ public class HealthBar : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private Image healthBar;
 
+    public static int OldHealth;
+
+    private bool changingHealth;
+
+
+    void FixedUpdate()
+    {
+        if (changingHealth)
+        {
+            if (OldHealth > Player.Health)
+            {
+                OldHealth--;
+
+                float fillAmount = ((float)OldHealth) / ((float)Player.MaxHealth);
+                healthBar.fillAmount = fillAmount;
+            }
+            else if (OldHealth < Player.Health)
+            {
+                OldHealth++;
+
+                float fillAmount = ((float)OldHealth) / ((float)Player.MaxHealth);
+                healthBar.fillAmount = fillAmount;
+            }
+
+            if (OldHealth == Player.Health)
+            {
+                changingHealth = false;
+            }
+        }
+    }
+
     private void OnEnable()
     {
         Player.OnPlayerChangeHealth += ChangeHealth;
@@ -18,14 +49,14 @@ public class HealthBar : MonoBehaviour, IPointerClickHandler
         Player.OnPlayerChangeHealth -= ChangeHealth;
     }
 
-    private void ChangeHealth()
+    private void ChangeHealth(int oldHealth)
     {
-        float fillAmount =  ((float) Player.Health) / ((float)Player.MaxHealth);
-        healthBar.fillAmount = fillAmount;
+        changingHealth = true;
+        OldHealth = oldHealth;
     }
 	
     public void OnPointerClick(PointerEventData eventData)
     {
-        Player.ModifyHealth(5, false);
+        Player.ModifyHealth(10, false);
     }
 }

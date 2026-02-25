@@ -8,6 +8,36 @@ public class HungerBar : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private Image hungerBar;
 
+    public static int OldHunger;
+
+    private bool changingHunger;
+
+    void FixedUpdate()
+    {
+        if (changingHunger)
+        {
+            if (OldHunger > Player.Hunger)
+            {
+                OldHunger--;
+
+                float fillAmount = ((float)OldHunger) / ((float)Player.MaxHunger);
+                hungerBar.fillAmount = fillAmount;
+            }
+            else if (OldHunger < Player.Hunger)
+            {
+                OldHunger++;
+
+                float fillAmount = ((float)OldHunger) / ((float)Player.MaxHunger);
+                hungerBar.fillAmount = fillAmount;
+            }
+
+            if (OldHunger == Player.Hunger)
+            {
+                changingHunger = false;
+            }
+        }
+    }
+
     private void OnEnable()
     {
         Player.OnPlayerChangeHunger += ChangeHunger;
@@ -18,14 +48,14 @@ public class HungerBar : MonoBehaviour, IPointerClickHandler
         Player.OnPlayerChangeHunger -= ChangeHunger;
     }
 
-    private void ChangeHunger()
+    private void ChangeHunger(int oldHunger)
     {
-        float fillAmount =  ((float) Player.Hunger) / ((float)Player.MaxHunger);
-        hungerBar.fillAmount = fillAmount;
+        changingHunger = true;
+        OldHunger = oldHunger;
     }
 	
     public void OnPointerClick(PointerEventData eventData)
     {
-        Player.ModifyHunger(5, false);
+        Player.ModifyHunger(10, false);
     }
 }
