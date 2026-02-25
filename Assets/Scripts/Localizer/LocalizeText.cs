@@ -25,7 +25,7 @@ public class LocalizeText : MonoBehaviour
 
     private void ChangeLanguage()
     {
-        textValue.text = Localizer.GetText(TextKey);
+        if (!ItemInfo.changingLanguage) textValue.text = Localizer.GetText(TextKey);
     }
 
     public static string GetText(string textKey)

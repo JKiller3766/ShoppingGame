@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,18 +14,20 @@ public class ItemInfo : MonoBehaviour
     private Sprite defaultSprite;
     private ItemBase itemSelected;
 
+    public static bool changingLanguage;
+
     public void OnEnable()
     {
         ItemSlotUI.OnSelect += AddInfoChart;
         ItemSlotUI.OnDeselect += RemoveInfoChart;
-        Localizer.OnLanguageChange += AddInfoChart;
+        Localizer.OnLanguageChange += AddInfoChart2;
     }
 
     private void OnDisable()
     {
         ItemSlotUI.OnSelect -= AddInfoChart;
         ItemSlotUI.OnDeselect -= RemoveInfoChart;
-        Localizer.OnLanguageChange -= AddInfoChart;
+        Localizer.OnLanguageChange -= AddInfoChart2;
     }
 
     private void AddInfoChart()
@@ -37,11 +40,7 @@ public class ItemInfo : MonoBehaviour
             {
                 LocalizeText [] localizerObject = GetComponentsInChildren<LocalizeText>();
 
-                Debug.Log(itemSelected.Name);
-                Debug.Log(LocalizeText.GetText(itemSelected.Name));
-
-                Name.text = (LocalizeText.GetText(localizerObject[0].TextKey) + " " + "LocalizeText.GetText(itemSelected.Name)");
-
+                Name.text = LocalizeText.GetText(localizerObject[0].TextKey) + " " + LocalizeText.GetText(itemSelected.Name);
                 Description.text = LocalizeText.GetText(localizerObject[1].TextKey) + " " + LocalizeText.GetText(itemSelected.Description);
                 Cost.text = LocalizeText.GetText(localizerObject[2].TextKey) + " " + itemSelected.Cost;
                 Sprite.sprite = itemSelected.ImageUI;
@@ -65,5 +64,11 @@ public class ItemInfo : MonoBehaviour
         Cost.text = "Cost: ";
         Sprite.sprite = defaultSprite;
         Restores.text = "Restores: ";
+    }
+
+    private void AddInfoChart2()
+    {
+        changingLanguage = true;
+        AddInfoChart();
     }
 }
