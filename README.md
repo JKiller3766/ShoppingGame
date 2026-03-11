@@ -19,7 +19,9 @@ Keyboard:
  - ENTER: Start and Restart the game
  - ESC: Quit game
 
-Mouse
+Mouse:
+ - LEFT CLICK: To interact with items and buttons.
+ - Left Click over the health & hunger bar to lower them.
 
 ### Developers
 
