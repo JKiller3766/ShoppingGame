@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Localizer : MonoBehaviour
 {
-    public static Localizer Instance; // Singleton instance of Localizer
+    public static Localizer Instance;
 
-    public TextAsset DataSheet; // Unity text asset to be assigned (.csv)
+    public TextAsset DataSheet;
 
     private Language currentLanguage;
     public Language DefaultLanguage;
 
-    Dictionary<string, LanguageData> Data; // Text data from CSV
+    Dictionary<string, LanguageData> Data;
 
-    public static Action OnLanguageChange; // Change language event
+    public static Action OnLanguageChange;
 
     private void Awake()
     {
@@ -47,7 +47,6 @@ public class Localizer : MonoBehaviour
 
     void AddLanguageData(string str)
     {
-        // Lazy initialization
         if (Data == null) Data = new Dictionary<string, LanguageData>();
 
         string[] entries = str.Split(';');

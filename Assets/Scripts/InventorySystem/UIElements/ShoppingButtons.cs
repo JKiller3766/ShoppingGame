@@ -55,7 +55,6 @@ public class ShoppingButtons : MonoBehaviour
 
     public static void Use()
     {
-
         if (ItemSlotUI.Selected != null)
         {
             if (ItemSlotUI.Selected.InventoryType() == "PlayerInventory")

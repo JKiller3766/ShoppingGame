@@ -12,7 +12,6 @@ public class HealthBar : MonoBehaviour, IPointerClickHandler
 
     private bool changingHealth;
 
-
     void FixedUpdate()
     {
         if (changingHealth)

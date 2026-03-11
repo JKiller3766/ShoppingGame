@@ -1,5 +1,3 @@
-using System.Reflection;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class SFXManager : MonoBehaviour
@@ -18,7 +16,6 @@ public class SFXManager : MonoBehaviour
         Player.OnTransaction += PlayTransactionSound;
         Player.OnPlayerDamage += PlayDamageSound;
         Player.OnPlayerStarve += PlayStarvingSound;
-
     }
 
     private void OnDisable()
@@ -28,16 +25,18 @@ public class SFXManager : MonoBehaviour
         Player.OnTransaction -= PlayTransactionSound;
         Player.OnPlayerDamage -= PlayDamageSound;
         Player.OnPlayerStarve -= PlayStarvingSound;
-
     }
+	
     public void PlaySelectionSound()
     {
         SFXSource.PlayOneShot(SelectionSound);
     }
+	
     public void PlayTransactionSound(int oldMoney)
     {
         SFXSource.PlayOneShot(TransactionSound);
     }
+	
     public void PlayDamageSound()
     {
         SFXSource.PlayOneShot(DamageSound);

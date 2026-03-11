@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
 public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public Image Image;
@@ -18,10 +17,10 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private ItemBase item;
     private InventoryUI inventoryUI;
 
-    private float velocidad = 75f;
-    private float anguloMax = 5f;
-    private float rotacionZ = 0f;
-    private int direccion = 1;
+    private float speed = 75f;
+    private float rotationAngle = 5f;
+    private float rotation = 0f;
+    private int direction = 1;
     private bool giggling = false;
 
     public static event Action OnSelect;
@@ -43,12 +42,12 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (giggling)
         {
-            rotacionZ += velocidad * Time.deltaTime * direccion;
+            rotation += speed * Time.deltaTime * direction;
 
-            if (Mathf.Abs(rotacionZ) >= anguloMax)
-                direccion *= -1;
+            if (Mathf.Abs(rotation) >= rotationAngle)
+                direction *= -1;
 
-            transform.rotation = Quaternion.Euler(0, 0, rotacionZ);
+            transform.rotation = Quaternion.Euler(0, 0, rotation);
         }
     }
 
@@ -67,17 +66,15 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         
         transform.SetAsLastSibling();
 
-        transform.localScale = new Vector3(4.5f, 4.5f, 4.5f);
-
         if (Selected != null) Selected.ChangeSelection();
+
+        transform.localScale = new Vector3(4.5f, 4.5f, 4.5f);
 
         Selected = this;
         BackgroundImage.fillAmount = 0;
         giggling = true;
         OnSelect?.Invoke();
     }
-	
-    
 
     public void OnDrag(PointerEventData eventData)
     {

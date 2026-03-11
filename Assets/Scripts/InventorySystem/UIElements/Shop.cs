@@ -9,7 +9,6 @@ public static class Shop
     public static readonly int DefaultMoney = 150;
     public static int Money = DefaultMoney;
 
-
     public static bool TakeMoney(int cost)
     {
         if (Money - cost >= 0)
@@ -19,7 +18,6 @@ public static class Shop
             OnTransaction?.Invoke(OldMoney);
             return true;
         }
-
         else return false;
     }
 
@@ -27,6 +25,7 @@ public static class Shop
     {
         int OldMoney = Money;
         Money += cost;
+		
         OnTransaction?.Invoke(OldMoney);
     }
 
