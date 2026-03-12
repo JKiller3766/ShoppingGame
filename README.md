@@ -1,6 +1,6 @@
 ## Delivery 03 - Shopping Game
 
-![$(Game Title)](Screenshots/screenshot01.png "$(Game Title)")
+![$(Game Title)](Screenshots/Title.png "$(Game Title)")
 
 ### Description
 
@@ -28,6 +28,12 @@ Mouse:
  - JKiller3766 - Programador
  - DeafKangaroo - Programador
  - AdriaGil0922 - Programador
+
+### Screenshots
+
+![$(Game Title)](Screenshots/Invetories.png "$(Game Title)")
+
+![$(Game Title)](Shopping/Title.png "$(Game Title)")
 
 ### License
 
