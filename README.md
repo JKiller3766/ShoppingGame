@@ -31,9 +31,9 @@ Mouse:
 
 ### Screenshots
 
-![$(Game Title)](Screenshots/Invetories.png "$(Game Title)")
+![$(Inventories)](Screenshots/Inventories.png "$(Inventories)")
 
-![$(Game Title)](Shopping/Title.png "$(Game Title)")
+![$(Shopping)](Screenshots/Shopping.png "$(Shopping)")
 
 ### License
 
